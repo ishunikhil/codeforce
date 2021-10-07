@@ -1,26 +1,29 @@
-#include <bits/stdc++.h>
-#include<vector>
+#include <iostream>
+#include <string>
+#include <map>
+
 using namespace std;
 
-int main(){
+int main()
+{
     int n;
-    cin>>n;
-    int c=0;
-    vector<pair<string,string>> v;
-    for(int i=0;i<n;i++){
-        cin>>v[i].first;
-    }
-    for(int i=0;i<n;i++){
-        v[i].second="";
-    }
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            if(i!=j){
-                if(v[i]==v[j]){
-                    
-                }
-            }
+    cin >> n;
+
+    map<string, int> database;
+    string s;
+    while (n--)
+    {
+        cin >> s;
+        if (database.count(s) == 0)
+        {
+            cout << "OK" << endl;
+            database[s] = 1;
+        }
+        else
+        {
+            cout << s << database[s] << endl;
+            database[s] += 1;
         }
     }
-   
+    return 0;
 }
